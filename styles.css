@@ -34,7 +34,7 @@ body {
 .sidebar {
     width: 12vw;
     background-color: var(--foreground);
-    display: fixed;
+    position: fixed;
     height: 100vh;
 }
 
@@ -118,6 +118,7 @@ body {
 
 .content {
     flex-grow: 1;
+    margin-left: 230px;
 }
 /* ----- */
 
@@ -251,16 +252,18 @@ body {
 
 .tasks button:hover {
     i.fi {
-        color: var(--foreground);
+        transform: translateY(-3px);
     }
     span {
         color: var(--details);
+        transform: translateY(-3px);
     }
     
 }
 
 .btn-tasks {
     display: flex;
+    align-self: flex-start;
     font-size: 20px;
     cursor: pointer;
     gap: 5px;
@@ -268,27 +271,45 @@ body {
     color: var(--text);
     border: none;
     background-color: transparent;
+    margin-top: -30px;
 }
 
-.tasks div:hover {
-    color: #7be7ab;
-    width: 100px;
-}
 
 #listaTarefas {
-    margin-top: -150px;
-    list-style-type: circle;
-    padding: 5px 20px;
+    list-style-type: none;
+    
 }
 
-#listaTarefas ul {
+#listaTarefas li {
+    display: flex;
+    margin-bottom: 10px;
     text-decoration: none;
+    gap: 5px;
+    height: 40px;
+    border-bottom: 1px solid var(--details);
+}
+
+
+#listaTarefas li .tarefa-checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+
+.tarefa-checkbox {
+    display: none;
+}
+
+#campoTarefa {
+    transition: margin-top 0.3s ease;
 }
 
 #campoTarefa {
     display: none;
-    margin-top: 20px;
     padding: 5px;
+    margin-top: -20px;
     background-color: var(--details);
     border-radius: 8px;
     width: 600px;

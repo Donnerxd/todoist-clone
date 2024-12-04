@@ -31,23 +31,41 @@ document.addEventListener("DOMContentLoaded", () => {
 // Mostra o campo de tarefa ao clicar no button
 document.getElementById('adicionarTarefaBtn').onclick = function() {
     document.getElementById('campoTarefa').style.display = 'block';
+    document.getElementById('adicionarTarefaBtn').style.display = 'none';
+}
+
+// Para cancelar a tarefa
+document.getElementById('cancelarTarefa').onclick = function() {
+  document.getElementById('novaTarefa').value = '';
+  document.getElementById('campoTarefa').style.display = 'none';
+  document.getElementById('adicionarTarefaBtn').style.display = 'block';
 }
 
 // Ação para salvar a tarefa
 document.getElementById('salvarTarefa').onclick = function() {
     const tarefa = document.getElementById('novaTarefa').value;
     if(tarefa) {
-        alert('Tarefa adicionada: ' + tarefa); // Alerta ao adicionar tarefa
         document.getElementById('novaTarefa').value = ''; // Limpa o campo
-        document.getElementById('campoTarefa').style.display = 'none'; // Esconde o campo novamente
-        const novoItem = document.createElement('li'); // Cria um novo item na lista
-        novoItem.textContent = tarefa; // -- //
+        
+        const novoItem = document.createElement('li');
+        novoItem.innerHTML = `
+            <input type="checkbox" class="tarefa-checkbox" />
+            <span>${tarefa}</span>
+        `;
         document.getElementById('listaTarefas').appendChild(novoItem); // Adiciona o item à lista
+        ajustarEspacoCampoTarefa();
     } else {
         alert('Por favor, digite uma tarefa');
     }
 };
-//
+
+function ajustarCampoTarefa() {
+  const lista = document.getElementById('listaTarefas');
+  const campoTarefa = document.getElementById('campoTarefa');
+
+  campoTarefa.style.marginTop = `${lista.offsetHeight + 20}px`;
+} 
+
 
 
   
