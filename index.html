@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Organized | Suas tarefas e sua vida mais organizada</title>
-    <link rel="icon" type="image/png" href="Images/favicon_16x16_white_bg.png">
+    <link rel="icon" type="image/png" href="Images/logorefeito-semfundo.PNG">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
 <header>
@@ -15,8 +15,8 @@
     <div class="layout">
         <div class="sidebar">
             <div class="sidebar-logo">
-                <img src="Images/logofeita-removebg-preview.png" alt="Logo" style="height: 70px; width: auto;">
-                <img src="Images/Screenshot_4-removebg-preview.png" alt="Logo-name" style="height: 160px; width: auto; margin-left: -50px; margin-top: -45px;">
+                <img src="Images/logorefeito-semfundo.PNG" alt="Logo" style="height: 70px; width: auto;">
+                <img src="Images/Screenshot_4-removebg-preview.png" alt="Logo-name" style="height: 160px; width: auto; margin-left: -55px; margin-top: -45px;">
             </div>
             <div class="sidebar-login">
                 <img src="Images/foto_bounty.png" alt="Login">
@@ -25,11 +25,11 @@
                 <i class="fi fi-rr-bell" style="margin-left: 65px;"></i>
             </div> 
             <ul class="sidebar-items">
-                <li><a href="#home"><i class="fi fi-rr-home"></i> Início</a></li>
-                <li><a href="#search"><i class="fi fi-rr-search"></i> Buscar</a></li>
-                <li><a href="#agenda"><i class="fi fi-rr-calendar-lines"></i> Agenda</a></li>
-                <li><a href="#tasks"><i class="fi fi-rr-list-check"></i> Tarefas</a></li>
-                <li style="margin-top: 455px;"><a href="#help"><i class="fi fi-rr-interrogation"></i> Suporte</a></li>
+                <li><a href="#home"><i class="fi fi-rr-home"></i>Início</a></li>
+                <li><a href="#search"><i class="fi fi-rr-search"></i>Buscar</a></li>
+                <li><a href="#agenda"><i class="fi fi-rr-calendar-lines"></i>Agenda</a></li>
+                <li><a href="#tasks"><i class="fi fi-rr-list-check"></i>Tarefas</a></li>
+                <li style="margin-top: 455px;"><a href="#help"><i class="fi fi-rr-interrogation"></i>Suporte</a></li>
             </ul>
             <!-- <ul class="sidebar-buttons">
                 <button>Cadastre-se</button>
@@ -38,70 +38,55 @@
             <p>&copy; 2024 donnerdev. All rights reserved.</p>
         </div>
         <main class="content">
-            <section id="home" class="active home">
+            <section id="home" class="tab active home">
                 <div class="bloco-home">
                     <div class="home-header">
-                        <h1> Organize sua vida, <br> conquiste seus objetivos</h1>
+                        <h1>Organize sua vida, <br> conquiste seus objetivos</h1>
                     </div>
                     <div class="home-items">
-                        <h2> Comece aqui:</h2>
+                        <h2>Comece aqui:</h2>
                         <ul>
-                            <li><a href="#"><i class="fi fi-rr-plus"></i> Nova tarefa</a></li>
-                            <li><a href="#"><i class="fi fi-rr-folder-open"></i> Abrir pasta</a></li>
-                            <li><a href="#"><i class="fi fi-rr-bookmark"></i> Filtros e etiquetas</a></li>
-                            <li><a href="#"><i class="fi fi-rr-share"></i> Compartilhar</a></li>
+                            <li><a href="#"><i class="fi fi-rr-plus"></i>Nova tarefa</a></li>
+                            <li><a href="#"><i class="fi fi-rr-folder-open"></i>Abrir pasta</a></li>
+                            <li><a href="#"><i class="fi fi-rr-bookmark"></i>Filtros e etiquetas</a></li>
+                            <li><a href="#"><i class="fi fi-rr-share"></i>Compartilhar</a></li>
                         </ul>
                     </div>
                 </div>
             </section>
+
+            <section id="agenda" class="tab">
+                <h1> Agenda</h1>
+                <p> this is a page content.</p>
+            </section>
+
+            <section id="tasks" class="tab">
+                <div class="tasks-content">
+                    <div class="tasks-header">
+                        <span>/</span>
+                        <span2>tarefas</span2>
+                        <a href="#"><i class="fi fi-rr-list"></i></a>
+                    </div>
+                    <div class="tasks">
+                        <h1>Minhas tarefas</h1>
+                        <button id="adicionarTarefaBtn" class="btn-tasks">
+                            <i class="fi fi-rr-plus"></i>
+                            <span>Adicionar</span>
+                        </button>
+                        <!-- Adicionar tarefa-->
+                        <div id="campoTarefa">
+                            <div class="campoTarefa-content">
+                                <textarea type="text" id="novaTarefa" placeholder="Digite a tarefa"></textarea>
+                                <div class="campoTarefa-footer">
+                                    <button class="btn-cancelar" id="cancelarTarefa">Cancelar</button>
+                                    <button class="btn-salvar" id="salvarTarefa">Salvar</button>
+                                </div>
+                        </div>
+                        <ul id="listaTarefas"></ul>
+                    </div>
+                </div>
+            </section>
         </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </div>
 

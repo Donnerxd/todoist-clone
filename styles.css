@@ -29,6 +29,8 @@ body {
     min-height: 100vh;
 }
 
+/* Sidebar */
+
 .sidebar {
     width: 12vw;
     background-color: var(--foreground);
@@ -117,10 +119,21 @@ body {
 .content {
     flex-grow: 1;
 }
+/* ----- */
+
+/* Aba home */
+
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}
 
 .home {
-    border-top: 150px solid var(--details);
-    border-bottom: 150px solid var(--details);
+    border-top: 150px solid #7be7ab;
+    border-bottom: 150px solid #7be7ab;
     height: 100vh;
 }
 
@@ -162,18 +175,189 @@ body {
 }
 
 .home-items a {
+    display: flex;
+    gap: 10px;
     font-size: 24px;
     text-decoration: none;
     color: var(--text);
     transition: color 0.3sec ease;
 }
 
+.home-items li, a {
+}
+
 .home-items a:hover {
-    color: #7f9856;
+    color: var(--details);
 }
 
 .home-items h2 {
     margin-bottom: 60px;
     font-size: 38px;
 }
+/* ----- */
+
+/* Aba Tasks */
+
+.tasks-content {
+    display: flex;
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 35px;
+    height: 100vh;
+}
+
+.tasks-header {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    width: 100%;
+}
+
+.tasks-header span {
+    color: #7be7ab;
+    font-size: 20px;
+}
+
+.tasks-header span2 {
+    font-size: 20px;
+}
+
+.tasks-header i.fi {
+    font-size: 24px;
+    margin-left: 30px;
+}
+
+.tasks-header a {
+    text-decoration: none;
+    color: #2f4a5e;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 60%;
+    align-self: center;
+    justify-content: center;
+}
+
+.tasks h1 {
+    font-size: 30px;
+}
+
+.tasks i.fi {
+    color: #7be7ab;
+}
+
+.tasks button:hover {
+    i.fi {
+        color: var(--foreground);
+    }
+    span {
+        color: var(--details);
+    }
+    
+}
+
+.btn-tasks {
+    display: flex;
+    font-size: 20px;
+    cursor: pointer;
+    gap: 5px;
+    font-family: 'Poppins',sans-serif;
+    color: var(--text);
+    border: none;
+    background-color: transparent;
+}
+
+.tasks div:hover {
+    color: #7be7ab;
+    width: 100px;
+}
+
+#listaTarefas {
+    margin-top: -150px;
+    list-style-type: circle;
+    padding: 5px 20px;
+}
+
+#listaTarefas ul {
+    text-decoration: none;
+}
+
+#campoTarefa {
+    display: none;
+    margin-top: 20px;
+    padding: 5px;
+    background-color: var(--details);
+    border-radius: 8px;
+    width: 600px;
+    height: 120px;
+}
+
+.campoTarefa-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+
+}
+
+.campoTarefa-content textarea {
+    height: 60px;
+    width: 590px;
+    border: none;
+    resize: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 3px 5px; 
+    overflow-wrap: break-word;
+    white-space: normal;
+    outline: none;
+}
+
+.campoTarefa-footer {
+    display: flex;
+    margin-left: 390px;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.btn-cancelar  {
+    background-color: var(--text);
+    color: white;
+    font-family: 'Poppins',sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 7px 15px;
+    border: none;
+}
+
+.btn-salvar {
+    background-color: #7be7ab;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: 'Poppins',sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 7px 15px;
+    border: none;
+}
+
+.campoTarefa-footer button:hover {
+    opacity: 0.8; /* Dá um efeito de hover */
+}
+
+
+
+
+
+
+
+
 
