@@ -51,20 +51,40 @@ document.getElementById('salvarTarefa').onclick = function() {
         novoItem.innerHTML = `
             <input type="checkbox" class="tarefa-checkbox" />
             <span>${tarefa}</span>
+            <div>
+              <i class="fi fi-rr-alarm-clock"></i>
+              <i class="fi fi-rr-menu-dots"></i>
+            </div>
         `;
-        document.getElementById('listaTarefas').appendChild(novoItem); // Adiciona o item à lista
-        ajustarEspacoCampoTarefa();
+        // Adiciona o item à lista
+        document.getElementById('listaTarefas').appendChild(novoItem);
+        
     } else {
         alert('Por favor, digite uma tarefa');
     }
 };
+
+document.getElementById('listaTarefas').addEventListener('change', function(event) {
+  if (event.target && event.target.matches('.tarefa-checkbox')) {
+      const checkbox = event.target;
+      if (checkbox.checked) {
+          const tarefaItem = checkbox.closest('li');
+          setTimeout(() => {
+            tarefaItem.classList.add('removendo-tarefa'); // Inicia a transição
+        }, 100);
+          setTimeout(() => {
+            tarefaItem.remove(); // Remove o <li> inteiro
+        }, 400); // 300ms (mesma duração definida na animação CSS)
+      }
+  }
+});
 
 function ajustarCampoTarefa() {
   const lista = document.getElementById('listaTarefas');
   const campoTarefa = document.getElementById('campoTarefa');
 
   campoTarefa.style.marginTop = `${lista.offsetHeight + 20}px`;
-} 
+}
 
 
 

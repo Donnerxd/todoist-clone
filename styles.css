@@ -264,9 +264,10 @@ body {
 .btn-tasks {
     display: flex;
     align-self: flex-start;
-    font-size: 20px;
+    font-size: 18px;
+    margin-left: 5px;
     cursor: pointer;
-    gap: 5px;
+    gap: 6px;
     font-family: 'Poppins',sans-serif;
     color: var(--text);
     border: none;
@@ -274,32 +275,68 @@ body {
     margin-top: -30px;
 }
 
+.listaTarefas-style {
+}
 
 #listaTarefas {
     list-style-type: none;
-    
 }
 
 #listaTarefas li {
     display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
     margin-bottom: 10px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s;
     text-decoration: none;
-    gap: 5px;
-    height: 40px;
+    gap: 7px;
+    height: 50px;
     border-bottom: 1px solid var(--details);
-}
-
-
-#listaTarefas li .tarefa-checkbox {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
+    flex-shrink: 0;
     cursor: pointer;
 }
 
+li.removendo-tarefa {
+    opacity: 0; /* Torna a tarefa invisível */
+    transform: scale(0.95); /* Move levemente para a esquerda */
+    transition: all 0.3s ease; /* Transição suave em 500ms */
+}
+
+#listaTarefas div {
+    display: flex;
+    gap: 14px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+#listaTarefas div i {
+    font-size: 20px;
+    color: var(--foreground);
+    cursor: pointer;
+}
+
+#listaTarefas div i:hover {
+    color: var(--details);
+}
 
 .tarefa-checkbox {
-    display: none;
+    width: 20px;
+    height: 20px;
+}
+
+.tarefa-checkbox:hover {
+    cursor: pointer;
+}
+
+.tarefa-checkbox:checked + ul {
+    background-color: #0f0e12;
+    content: '✔';
+    color: white;
 }
 
 #campoTarefa {
